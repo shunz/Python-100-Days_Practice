@@ -121,6 +121,18 @@ print(speed())
 - distance() 距离
 '''
 
+print(position())
+print(pos())
+
+print(towards(0, 0)) # 从海龟位置到(x, y)连线的夹角，依赖于初始朝向
+
+print(xcor()) # 海龟的 x 坐标
+print(ycor()) # 海龟的 y 坐标
+
+print(heading()) # 海龟的朝向
+
+print(distance(0, 0)) # 从海龟位置到(x, y)之间的距离
+
 
 ### 设置与度量单位
 '''
