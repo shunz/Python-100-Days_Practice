@@ -263,6 +263,11 @@ write((0,0), True)
 - hideturtle() | ht() 隐藏海龟
 - isvisible() 是否可见
 '''
+showturtle()
+hideturtle()
+ht()
+st()
+print(isvisible())
 
 
 
@@ -278,6 +283,41 @@ write((0,0), True)
 - shapetransform() 变形
 - get_shapepoly() 获取形状多边形
 '''
+shape() # 返回当前的形状名
+shape('turtle') # 指定形状名(arrow,turtle,circle,square,triangel,classic)
+
+resizemode() # 返回当前大小调整模式
+resizemode('auto') # 根据画笔粗细值调整海龟的外观
+resizemode('user') # 根据拉伸因子和轮廓宽度(outline)值调整海龟的外观，两者是由 shapezise() 设置的
+resizemode('noresize') # 不调整海龟的外观大小
+
+'''
+shapesize(stretch_wid, stretch_len, outline)
+返回或设置画笔的属性 x/y-拉伸因子和/或轮廓，需配合resizemode('user')
+- stretch_wid: 垂直于其朝向的宽度拉伸因子
+- stretch_len: 平等于其朝向的长度拉伸因子
+- outline: 轮廓宽度
+'''
+shapesize()
+resizemode('user')
+shapesize(5, 5, 20)
+shapesize(outline=8)
+
+shearfactor() # 返回当前剪切因子(剪切角度的切线)
+shearfactor(0.5) # 设置剪切因子
+
+reset()
+shape('turtle')
+tilt(30) # 海龟形状当前倾角转动指定角度，不改变海龟的朝向(移动方向)
+
+settiltangle(45) # 旋转海龟形状，忽略倾角，不改变朝向
+
+tiltangle() # 返回或指定当前的倾角
+tiltangle(60)
+
+shapetransform() # 返回或设置海龟形状的当前变形矩阵
+
+get_shapepoly() # 返回以坐标值对元组表示的当前形状多边形，可用于定义一个新形状或一个复合形状的多个组成部分
 
 
 
