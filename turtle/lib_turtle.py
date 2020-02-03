@@ -328,6 +328,34 @@ get_shapepoly() # 返回以坐标值对元组表示的当前形状多边形，�
 - ondrag() 当鼠标拖动
 '''
 
+'''
+onclick(fun, btn=1, add=None)
+将fun指定的函数绑定到鼠标点击此海龟事件。若fun为None，则移除现有绑定
+- fun: 一个函数，调用时传入两个参数表示在画布上点击的坐标
+- btn: 鼠标按钮编号，默认值为1(鼠标左键)
+- add: 如为True将添加一个新绑定，否则将取代之前的绑定
+以下为使用匿名海龟即过程式的示例：
+'''
+def turn_left(x,y):
+    left(30)
+    fd(30)
+
+onclick(turn_left)
+onclick(None) # 若fun为None，则移除现有绑定
+
+class MyTurtle(Turtle):
+    def glow(self, x, y):
+        self.fillcolor('red')
+    def unglow(self, x, y):
+        self.fillcolor('')
+
+t = MyTurtle()
+onclick(t.glow) # clicking on the turtle turns fillcolor red
+onrelease(t.unglow) # releasing turns it to transparent.
+
+reset()
+# ondrag(goto) # 点击并拖动海龟可在屏幕上手绘线条
+
 
 
 ## 特殊海龟方法
@@ -341,6 +369,39 @@ get_shapepoly() # 返回以坐标值对元组表示的当前形状多边形，�
 - setundobuffer() 设置撤销缓冲区
 - undobufferentries() 撤销缓冲区条目数
 '''
+home()
+begin_poly()
+fd(100)
+lt(20)
+fd(30)
+lt(60)
+fd(50)
+end_poly()
+p = get_poly()
+register_shape('myFavShape',p)
+
+mick = Turtle()
+joe = mick.clone() # 创建并返回海龟的克隆体
+joe.lt(90)
+joe.fd(100)
+mick.lt(-90)
+mick.fd(100)
+
+pet1 = getturtle() # 返回海龟对象自身，作为一个函数来返回「匿名海龟」
+pet2 = joe.getpen()
+print(pet1,pet2)
+pet2.color('red', 'blue') # 该对象可调用 Turtle 方法
+
+ts = getscreen() # 返回作为海龟绘图场所的 TurtleScreen 类对象
+print(ts)
+ts.bgcolor('pink') # 该对象将可调用 TurtleScreen 方法
+
+setundobuffer(None) # 禁用撤销缓冲区
+setundobuffer(20) # 设置可使用 undo() 撤销的海龟命令的次数上限
+print(undobufferentries()) # 返回撤销缓冲区里的条目数
+
+while undobufferentries():
+    undo()
 
 
 
@@ -355,6 +416,30 @@ get_shapepoly() # 返回以坐标值对元组表示的当前形状多边形，�
 - screensize() 屏幕大小
 - setworldcoordinates() 设置世界坐标系
 '''
+bgcolor() # 返回 TurtleScreen 的背景色
+bgcolor('pink')
+bgcolor('#cccccc')
+bgcolor(255,255,255)
+colormode(1)
+bgcolor(0.3, 0.6, 0.9)
+
+bgpic() # 返回当前背景图文件名
+# bgpic('landscape.gif') # 设置背景图
+bgpic('nopic') # 删除当前背景图
+
+clear() # 作为全局函数对应的是 Turtle 方法
+clearscreen() # 从中删除所有海龟的全部绘图，TurtleScreen 重置为初始状态(白背景，无背景图，无事件绑定并启用追踪
+
+reset() # 作为全局函数对应的是 Turtle 方法
+resetscreen() # 重置屏幕上的所有海龟为初始状态
+
+screensize() # 返回当前窗口尺寸
+screensize(400, 300, 'pink')
+
+reset()
+# setworldcoordinates(-50, -7.5, 50, 7.5) # 设置用户自定义坐标系(左下角的x/y坐标，右上角x/y坐标，在其中，角度可能显示扭曲
+for _ in range(8):
+    left(45); fd(20) # a regular octagon
 
 
 
@@ -364,6 +449,17 @@ get_shapepoly() # 返回以坐标值对元组表示的当前形状多边形，�
 - tracer() 追踪
 - update() 更新
 '''
+delay() # 返回以毫秒数表示的延迟值(约等于连续两次画布刷新的间隔时间),绘图延迟越长，动画速度越慢
+delay(5)
+
+'''
+启/禁用海龟动画并设置刷新图形的延迟时间
+'''
+tracer(8, 25) # 每第8次屏幕刷新会实际执行，延迟25毫秒
+tracer() # 返回当前保存的n值
+tracer(1)
+
+update() # 执行一次 TurtleScreen 刷新，在禁用追踪时使用
 
 
 
@@ -376,12 +472,37 @@ get_shapepoly() # 返回以坐标值对元组表示的当前形状多边形，�
 - ontimer() 当达到定时
 - mainloop | done() 主循环
 '''
+def f():
+    fd(50)
+    lt(60)
+
+onkey(f, 'Up')
+listen() # 设置焦点到 TurtleScreen，以便接收按钮事件
+
+onscreenclick(turn_left,1) # onclick 对应的是 Turtle 方法
+
+running = True
+def g():
+    if running:
+        fd(50)
+        rt(60)
+        ontimer(g, 250) # 安装一个计时器，在 250 毫秒后调用 g 函数
+        # ontimer(stop_g, 1250)
+g()
+running = False
+
+def stop_g():
+    running = False
+
+
+# mainloop()
+# done() # 开始事件循环，必须作为一个海龟绘图程序的结束语句
 
 
 
 ## 设置与特殊方法
 '''
-- mode() 模式
+- mode() 海龟模式
 - colormode() 颜色模式
 - getcanvas() 获取画布
 - getshapes() 获取形状
@@ -391,12 +512,56 @@ get_shapepoly() # 返回以坐标值对元组表示的当前形状多边形，�
 - window_width() 窗口宽度
 '''
 
+'''
+mode() 设置海龟模式
+- 'standard'模式与旧的 turtle 兼容，海龟初始朝向：朝右(东),正数角度：逆时针
+- 'logo'模式与大部分 Logo 海龟绘图兼容，海龟初始朝向：朝上(北),正数角度:顺时针
+- 'world'模式使用用户自定义的「世界坐标系」，注意此模式下，如果x/y单位比率不等于1则角度会显得扭曲
+'''
+mode('logo')
+mode('standard')
+
+colormode(1)
+colormode(255)
+
+cv = getcanvas() # 返回此 TurtleScreen 的 Canvas 对象，需了解 Tninter的Canvas对象内部机理
+
+getshapes() # 返回当前所有可用海龟形状的列表 ['arrow', 'blank', 'circle', 'classic', 'myFavShape', 'square', 'triangle', 'turtle']
+
+# register_shape('snake.gif') #将一个海龟形状加入形状列表
+addshape('triangle', ((5,-3),(0,5),(-5,-3))) # 添加由坐标值对构成的元组
+
+turtles() # 返回屏幕上的海龟列表
+
+window_height()
+
+window_width()
+
+
 
 ## 输入方法
 '''
-- textinput() 文本输入
-- numinput() 数字输入
+- textinput(title, prompt) 文本输入
+- numinput(title, prompt, default=None, minval=None, maxval=None) 数字输入
 '''
+
+'''
+textinput() 弹出一个对话框窗口用来输入一个字符串
+- title: 对话框窗口的标题
+- prompt: 一条文本，用来提示需要输入的什么信息
+返回输入的字符串，对话框被取消则返回None
+'''
+textinput('NIM', 'Name of first player:') 
+
+'''
+numinput() 弹出一个对话框窗口用来输入一个数值
+- title: 对话框窗口的标题
+- prompt: 一条文本，用来提示需要输入的什么信息
+- default: 默认值
+- minval: 可输入的最小值
+- maxval: 可输入的最大值
+'''
+numinput('Poker','Your stakes:',1000, minval=10,maxval= 10000)
 
 
 
@@ -407,8 +572,30 @@ get_shapepoly() # 返回以坐标值对元组表示的当前形状多边形，�
 - setup() 设置
 - title() 标题
 '''
+# bye() # 关闭海龟绘图窗口
+# exitonclick() # 将bye()方法绑定到Screen上的鼠标点击事件
+
+'''
+setup()
+- width: 像素值或百分比，默认为屏幕的50%
+- height: 默认为屏幕的75%
+- startx: 距离屏幕左边缘多少像素，负值表示距离右边缘，None表示水平居中
+- starty: 类似startx
+'''
+# sets window to 200x200 pixels, in upper left of screen
+setup(width=400, height=300, startx=0, starty=0)
+
+# sets window to 75% of screen by 70% of screen and centers
+setup(width=.75, height=0.7,startx=None, starty=None)
+
+title('Welcome to the turtle world!') # 设置海龟绘图窗口的标题栏文本
 
 
+'''
+turtledemo 演示脚本集
+
+python3 -m turtledemo
+'''
 
 
 '''
