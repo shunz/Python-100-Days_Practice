@@ -155,6 +155,69 @@ multiple entities are needed.
 
 
 
+'''
+面向对象的支柱
+
+三大支柱：封装、继承和多态
+
+封装：隐藏一切可隐藏的实现细节，只向外界暴露(提供)简单的编程接口
+- 在类中定义的方法其实就是把数据和对数据的操作封装起来了
+- 创建对象后，只需给其发送一个消息(调用方法)就可执行方法中的代码，即：只需知道方法名和
+  传参(方法的外部视图)，无需知道方法内部的实现细节(方法的内部视图)
+'''
+
+
+# 练习1：定义一个类描述数字时钟
+from time import sleep
+
+class Clock(object):
+    '''数字时钟'''
+
+    def __init__(self, hour=0, minute=0, second=0):
+        '''初始化方法
+
+        :param hour: 时
+        :param minute: 分
+        :param second: 秒
+        '''
+        self._hour = hour
+        self._minute = minute
+        self._second = second
+
+    def run(self):
+        '''走字'''
+        self._second += 1
+        if self._second == 60:
+            self._second = 0
+            self._minute += 1
+            if self._minute == 60:
+                self._minute = 0
+                self._hour += 1
+                if self._hour == 24:
+                    self._hour = 0
+
+    def show(self):
+        '''显示时间'''
+        return f'{self._hour:02}:{self._minute:02}:{self._second:02}'
+
+def main():
+    clock  = Clock(23, 59, 55)
+    while True:
+        print(clock.show())
+        sleep(1)
+        clock.run()
+
+if __name__ == '__main__':
+    main()
+        
+            
+
+
+
+
+
+
+
 
 
 
