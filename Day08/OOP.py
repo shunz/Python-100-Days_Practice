@@ -200,25 +200,73 @@ class Clock(object):
         '''显示时间'''
         return f'{self._hour:02}:{self._minute:02}:{self._second:02}'
 
-def main():
+def digital_clock():
     clock  = Clock(23, 59, 55)
     while True:
         print(clock.show())
         sleep(1)
         clock.run()
 
+'''
 if __name__ == '__main__':
-    main()
-        
+    digital_clock()
+'''        
             
 
+# 练习2：定义一个类描述平面上的点，并提供移动点和计算到另一个点距离的方法
+from math import sqrt
 
+class Point(object):
+    def __init__(self, x=0, y=0):
+        '''初始化方法
 
+        :param x: 横坐标
+        :param y: 纵坐标
+        '''
+        self.x = x
+        self.y = y
 
+    def move_to(self, x, y):
+        '''移动到指定位置
 
+        :param x: 新的横坐标
+        :parma y: 新的纵坐标
+        '''
+        self.x = x
+        self.y = y
 
+    def move_by(self, dx, dy):
+        '''移动指定的增量
 
+        :param dx: 横坐标的增量
+        :param dy: 纵坐标的增量
+        '''
+        self.x += dx
+        self.y += dy
 
+    def distance_to(self, other):
+        '''计算与另一个点的距离
 
+        :param other: 另一个点
+        '''
+        dx = self.x - other.x
+        dy = self.y - other.y
+        return sqrt(dx ** 2 + dy ** 2)
 
+    def __str__(self):
+        return f'({str(self.x)}, {str(self.y)})'
+
+def point_pos():
+    p1 = Point(3, 5)
+    p2 = Point()
+    print(f'p1 坐标：{p1}')
+    print(f'p2 坐标：{p2}')
+    p1.move_to(10, 20)
+    print(f'p1 移动后坐标：{p1}')
+    p2.move_by(-1, 6)
+    print(f'p2 移动后坐标：{p2}')
+    print(f'P1与P2之间距离：{p1.distance_to(p2):.2f}')
+
+if __name__ == '__main__':
+    point_pos()
 
