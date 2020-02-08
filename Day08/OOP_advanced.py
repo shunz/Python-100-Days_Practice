@@ -194,6 +194,188 @@ def clock_time():
         sleep(1)
         clock.run()
 
-if __name__ == '__main__':
-    clock_time()
+
+# if __name__ == '__main__':
+#     clock_time()
+
+
+
+'''
+类之间的关系
+
+- is-a: 继承或泛化，比如学生和人的关系、手机和电子产品的关系
+- has-a: 关联，比如部门和员工的关系、汽车和引擎的关系; 如果是整体
+         和部分的关联，称之为聚合关系; 如果整体进一步负责了部分的
+         生命周期(整体和部分是不可分割的，同时存在也同时消亡),称
+         之为合称关系(最强的关联关系)
+- use-a: 依赖，比如司机有个驾驶的行为(方法),其中(的参数)使用到了
+         汽车，那么司机和汽车就是依赖关系
+
+使用UML(统一建模语言)进行面向对象建模，其中一项重要工作就是把类和类
+之间的关系用标准化的图形符号描述出来，相关内容可参考《UML面向对象设
+计基础》一书
     
+利用类的各种关系，可以在已有类的基础上完成某些操作或创建新的类，这些
+都是代码复用的重要手段，不仅可以减少开发的工作量，也有利于代码的管理
+和维护，这是日常工作中会使用到的技术手段。
+'''
+
+
+'''
+继承和多态
+
+在已有类的基础上创建新类，让一个类从另一个类那将属性和方法直接继承下
+来，从而减少重复代码的编写。
+
+- 父类/超类/基类：提供继承信息的类
+- 子类/派生类/衍生类：得到继承信息的类，除了继承父类提供的属性和方
+  法，还可定义自己特有的属性和方法，比父类拥有更多的能力。
+
+实际开发中，经常用子类对象去替换一个父类对象，这是面向对象编程中的
+常见行为，称之为「里氏替换原则」
+'''
+
+
+'''
+一个继承的例子
+'''
+class Person2(object):
+    '''人'''
+
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        self._age = age
+
+    def play(self):
+        print(f'{self._name}正在愉快的玩耍。')
+
+    def watch_av(self):
+        if self._age >= 18:
+            print(f'{self._name}正在观看爱情动作片。')
+        else:
+            print(f'{self._name}只能观看《熊出没》。')
+
+# 继承父类 Person2
+class Student(Person2):
+    '''学生'''
+
+    def __init__(self, name, age, grade):
+        # 继承父类的构造函数
+        super().__init__(name, age)
+        self._grade = grade
+
+    @property
+    def grade(self):
+        return self._grade
+
+    @grade.setter
+    def grade(self, grade):
+        self._grade = grade
+
+    def study(self, course):
+        print(f'{self._grade}的{self._name}正在学习{course}')
+
+class Teacher(Person2):
+    '''老师'''
+
+    def __init__(self, name, age, title):
+        super().__init__(name, age)
+        self._title = title
+
+    @property
+    def title(self):
+        return self._title
+
+    @title.setter
+    def grade(self, title):
+        self._title = title
+
+    def teach(self, course):
+        print(f'{self._name}{self._title}正在讲{course}')
+
+def people():
+    stu = Student('阿勒克斯', 4, '幼一')
+    stu.study('英语')
+    stu.watch_av()
+    t = Teacher('Jony', 25, '砖家')
+    t. teach('Python程序设计')
+    t.watch_av()
+
+
+if __name__ == '__main__':
+    people()
+    
+
+'''
+多态
+
+- 子类继承父类的方法后，可对父类已有方法给出新的实现版本，此动作称之为
+方法重写(Override)。
+- 通过方法重写可让父类的同一个行为在子类中拥有不同的实现版本，调用这个
+经过子类重写的方法时，不同子类对象会表现出不同的行为，这个就是多态(
+poly-morphism)
+'''
+
+'''
+一个多态的例子
+'''
+from abc import ABCMeta, abstractmethod
+
+class Pet(object, metaclass=ABCMeta):
+    '''宠物'''
+
+    def __init__(self, nickname):
+        self._nickname = nickname
+
+    @abstractmethod
+    def make_voice(self):
+        '''发出声音'''
+        pass
+
+# 方法重写
+class Dog(Pet):
+    '''狗'''
+
+    def make_voice(self):
+        print(f'{self._nickname}：汪汪汪……')
+
+# 方法重写
+class Cat(Pet):
+    '''猫'''
+
+    def make_voice(self):
+        print(f'{self._nickname}:(>^ω^<)喵……')
+
+def pet_sounds():
+    pets = [Dog('旺财'), Cat('凯蒂'), Dog('大黄')]
+    for pet in pets:
+        pet.make_voice()
+
+
+if __name__ == '__main__':
+    pet_sounds()
+
+'''
+上面多态代码中，将Pet类处理成了一个抽象类(不能实例化,不能创建对
+象的类)。这种类存在的目的就是让其他类去继承它。
+
+Python 没有从语法层面像Java/C#一样提供对抽象类的支持，而是通过
+abc 模块的 ABCMeta 元类和 abstractmethod 包装器来达到抽象类
+的效果，如果一个类中存在抽象方法就不能实例化(创建对象)。
+
+上面的代码中，Dog 和 Cat 两个子类分别对 Pet 父类中的 make_voice
+抽象方法进行了重写，并给出了不同的实现版本，当调用该方法时，这个方法
+就表现出了多态行为(同样的方法做了不同事情)
+'''
