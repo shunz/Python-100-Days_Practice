@@ -1,4 +1,4 @@
-"""杨辉三角
+"""杨辉三角/Pascal
 
 https://zh.wikipedia.org/wiki/%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2
 """
