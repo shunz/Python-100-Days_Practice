@@ -1,0 +1,4 @@
+([('5.5.2',
+   '/Users/Shunz 1/Desktop/Python '
+   'Practise/icourse163.org/北京理工大学Python语言程序设计/Chapter5/dist/5.5.2',
+   'EXECUTABLE')],)

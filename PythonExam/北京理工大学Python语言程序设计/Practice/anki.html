@@ -1,0 +1,182 @@
+<html class=" webkit chrome mac js"><head>
+    <title>main webview</title>
+    
+    <style>
+    body { zoom: 1; background: #ececec; font-size:15px;font-family:"Helvetica"; }
+    
+    button { font-size: 13px; -webkit-appearance: none; background: #fff; border: 1px solid #ccc;
+    border-radius:5px; font-family: Helvetica }
+    </style>
+      
+    <base href="http://127.0.0.1:50492/"><link rel="stylesheet" type="text/css" href="http://127.0.0.1:50492/_anki/webview.css">
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:50492/_anki/reviewer.css"><script src="http://127.0.0.1:50492/_anki/webview.js"></script>
+    <script src="http://127.0.0.1:50492/_anki/jquery.js"></script>
+    <script src="http://127.0.0.1:50492/_anki/browsersel.js"></script>
+    <script src="http://127.0.0.1:50492/_anki/mathjax/conf.js"></script>
+    <script src="http://127.0.0.1:50492/_anki/mathjax/MathJax.js"></script><style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+    <script src="http://127.0.0.1:50492/_anki/reviewer.js"></script>
+    </head>
+    
+    <body class="card card1"><div id="MathJax_Message" style="display: none;"></div>
+    <div id="_mark" style="display: none;">★</div>
+    <div id="_flag" style="display: none;">⚑</div>
+    
+    <div id="qa" style="opacity: 1;"><style>.card {
+        font-family: "Microsoft YaHei", Helvetica, sans-serif;
+        color: #1d2129;
+        background-color: #e9ebee;
+    }
+    
+    #f {
+        color: #aaa;
+    }
+    
+    * {
+       # color: #fff;
+    }
+    
+    .container-fluid .row-fluid * {
+        background: #000;
+    }</style><div id="f">
+        <meta charset="UTF-8">
+        <style>
+            body {
+                padding-top: 0;
+                color: #1d2129;
+                background-color: #e9ebee;
+                padding-bottom: 40px;
+                font-family: "Open Sans", Helvetica, Arial, sans-serif;
+            }
+    
+            .row-fluid {
+                text-align: left;
+                margin-top: 16px;
+                margin-bottom: 4px;
+                background-color: #fff;
+                border: 1px solid;
+                border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+                border-radius: 8px;
+            }
+    
+            .cell {
+                padding: 16px 16px 16px 16px;
+            }
+    
+            .hint {
+                color: #999999;
+                /*margin-left: 10px;*/
+            }
+    
+    
+            blockquote {
+                padding: 10px 0 10px 15px;
+                margin: 0 5px 10px;
+                background: #f9f9f9;
+                border-left: 5px solid black;
+                /*margin: 1.5em 10px;*/
+                /*padding: 0.5em 10px;*/
+            }
+    
+            .slidetop {
+                position: relative;
+                -webkit-animation: slidetop 0.5s 0s;
+                -webkit-animation-fill-mode: forwards;
+            }
+    
+            @-webkit-keyframes slidetop {
+                0% {
+                    opacity: 0;
+                    top: 50px;
+                }
+                50% {
+                    opacity: 0.8;
+                    top: -5px;
+                }
+                80% {
+                    opacity: 0.95;
+                    top: 0;
+                }
+                100% {
+                    opacity: 1;
+                    top: 0;
+                }
+            }
+    
+    
+            .hw {
+                font-size: 50px;
+                font-weight: bolder;
+                color: #2a2a2a;
+                margin-right: 6px;
+                word-break: break-word;
+            }
+    
+            .gramb .pos {
+                font: 16px "Open Sans", Helvetica, Arial, sans-serif;
+                color: red;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                margin-bottom: 16px;
+                margin-left: 5px;
+                font-weight: bold;
+            }
+    
+            span.ind {
+                color: #2a2a2a !important;
+            }
+    
+            .sent {
+                margin-bottom: 20px;
+            }
+    
+            .kw {
+                color: red;
+                font-weight: bolder;
+            }
+    
+            .gramb {
+                margin-top: 10px;
+            }
+    
+            .ex {
+                font: 400 16px "Open Sans", Helvetica, Arial, sans-serif;
+                font-family: "Open Sans", Helvetica, Arial, sans-serif;
+                color: #575757;
+            }
+    
+            em {
+                font-style: italic;
+            }
+    
+        </style>
+        <title>font</title>
+    
+    
+    <div class="container-fluid text-left">
+        <div class="row-fluid">
+            <div class="cell">
+                <p style="margin-left: 5px;margin-top: 0">
+                    <span class="hint">原句摘录</span>
+                </p>
+                <span>
+                    From <span class="kw">cashier</span> to world's youngest PM. Finland's new leader breaks the mold
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    <div id="n" style="display:none">JTNDaGVhZCUzRSUwQSUyMCUyMCUyMCUyMCUzQ21ldGElMjBjaGFyc2V0JTNEJTIyVVRGLTglMjIl M0UlMEElMjAlMjAlMjAlMjAlM0NzdHlsZSUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGJv ZHklMjAlN0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBwYWRkaW5nLXRv cCUzQSUyMDAlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBjb2xvciUz QSUyMCUyMzFkMjEyOSUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGJh Y2tncm91bmQtY29sb3IlM0ElMjAlMjNlOWViZWUlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjBwYWRkaW5nLWJvdHRvbSUzQSUyMDQwcHglM0IlMEElMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBmb250LWZhbWlseSUzQSUyMCUyMk9wZW4lMjBTYW5zJTIy JTJDJTIwSGVsdmV0aWNhJTJDJTIwQXJpYWwlMkMlMjBzYW5zLXNlcmlmJTNCJTBBJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTdEJTBBJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwLnJvdy1mbHVp ZCUyMCU3QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHRleHQtYWxpZ24l M0ElMjBsZWZ0JTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwbWFyZ2lu LXRvcCUzQSUyMDE2cHglM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBt YXJnaW4tYm90dG9tJTNBJTIwNHB4JTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwYmFja2dyb3VuZC1jb2xvciUzQSUyMCUyM2ZmZiUzQiUwQSUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMGJvcmRlciUzQSUyMDFweCUyMHNvbGlkJTNCJTBBJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwYm9yZGVyLWNvbG9yJTNBJTIwJTIzZTVlNmU5JTIw JTIzZGZlMGU0JTIwJTIzZDBkMWQ1JTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwYm9yZGVyLXJhZGl1cyUzQSUyMDhweCUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCU3RCUwQSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMC5jZWxsJTIwJTdCJTBBJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwcGFkZGluZyUzQSUyMDE2cHglMjAxNnB4JTIwMTZw eCUyMDE2cHglM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0QlMEElMEElMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAuaGludCUyMCU3QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMGNvbG9yJTNBJTIwJTIzOTk5OTk5JTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwLyUyQW1hcmdpbi1sZWZ0JTNBJTIwMTBweCUzQiUyQS8lMEElMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlN0QlMEElMEElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBibG9ja3F1 b3RlJTIwJTdCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwcGFkZGluZyUz QSUyMDEwcHglMjAwJTIwMTBweCUyMDE1cHglM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjBtYXJnaW4lM0ElMjAwJTIwNXB4JTIwMTBweCUzQiUwQSUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMGJhY2tncm91bmQlM0ElMjAlMjNmOWY5ZjklM0IlMEElMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBib3JkZXItbGVmdCUzQSUyMDVweCUyMHNv bGlkJTIwYmxhY2slM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAvJTJB bWFyZ2luJTNBJTIwMS41ZW0lMjAxMHB4JTNCJTJBLyUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMC8lMkFwYWRkaW5nJTNBJTIwMC41ZW0lMjAxMHB4JTNCJTJBLyUwQSUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMC5zbGlk ZXRvcCUyMCU3QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHBvc2l0aW9u JTNBJTIwcmVsYXRpdmUlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAt d2Via2l0LWFuaW1hdGlvbiUzQSUyMHNsaWRldG9wJTIwMC41cyUyMDBzJTNCJTBBJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwLXdlYmtpdC1hbmltYXRpb24tZmlsbC1tb2RlJTNB JTIwZm9yd2FyZHMlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0QlMEElMEElMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlNDAtd2Via2l0LWtleWZyYW1lcyUyMHNsaWRldG9wJTIwJTdCJTBB JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwMCUyNSUyMCU3QiUwQSUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMG9wYWNpdHklM0ElMjAwJTNC JTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwdG9wJTNB JTIwNTBweCUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMDUwJTI1JTIwJTdCJTBBJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwb3BhY2l0eSUzQSUyMDAuOCUz QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHRvcCUz QSUyMC01cHglM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlN0QlMEEl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjA4MCUyNSUyMCU3QiUwQSUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMG9wYWNpdHklM0ElMjAwLjk1 JTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwdG9w JTNBJTIwMCUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMDEwMCUyNSUyMCU3QiUwQSUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMG9wYWNpdHklM0ElMjAxJTNC JTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwdG9wJTNB JTIwMCUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUwQSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMC5o dyUyMCU3QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGZvbnQtc2l6ZSUz QSUyMDUwcHglM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBmb250LXdl aWdodCUzQSUyMGJvbGRlciUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MGNvbG9yJTNBJTIwJTIzMmEyYTJhJTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwbWFyZ2luLXJpZ2h0JTNBJTIwNnB4JTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwd29yZC1icmVhayUzQSUyMGJyZWFrLXdvcmQlM0IlMEElMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlN0QlMEElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAuZ3JhbWIlMjAucG9z JTIwJTdCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwZm9udCUzQSUyMDE2 cHglMjAlMjJPcGVuJTIwU2FucyUyMiUyQyUyMEhlbHZldGljYSUyQyUyMEFyaWFsJTJDJTIwc2Fu cy1zZXJpZiUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGNvbG9yJTNB JTIwcmVkJTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwdGV4dC10cmFu c2Zvcm0lM0ElMjB1cHBlcmNhc2UlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjBsZXR0ZXItc3BhY2luZyUzQSUyMDAuOHB4JTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwbWFyZ2luLWJvdHRvbSUzQSUyMDE2cHglM0IlMEElMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBtYXJnaW4tbGVmdCUzQSUyMDVweCUzQiUwQSUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGZvbnQtd2VpZ2h0JTNBJTIwYm9sZCUzQiUwQSUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMHNw YW4uaW5kJTIwJTdCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwY29sb3Il M0ElMjAlMjMyYTJhMmElMjAlMjFpbXBvcnRhbnQlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlN0QlMEElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAuc2VudCUyMCU3QiUwQSUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMG1hcmdpbi1ib3R0b20lM0ElMjAyMHB4JTNCJTBB JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTdEJTBBJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw Lmt3JTIwJTdCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwY29sb3IlM0El MjByZWQlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBmb250LXdlaWdo dCUzQSUyMGJvbGRlciUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUwQSUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMC5ncmFtYiUyMCU3QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMG1hcmdpbi10b3AlM0ElMjAxMHB4JTNCJTBBJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTdEJTBBJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwLmV4JTIwJTdCJTBBJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwZm9udCUzQSUyMDQwMCUyMDE2cHglMjAlMjJP cGVuJTIwU2FucyUyMiUyQyUyMEhlbHZldGljYSUyQyUyMEFyaWFsJTJDJTIwc2Fucy1zZXJpZiUz QiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGZvbnQtZmFtaWx5JTNBJTIw JTIyT3BlbiUyMFNhbnMlMjIlMkMlMjBIZWx2ZXRpY2ElMkMlMjBBcmlhbCUyQyUyMHNhbnMtc2Vy aWYlM0IlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBjb2xvciUzQSUyMCUy MzU3NTc1NyUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3RCUwQSUwQSUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMGVtJTIwJTdCJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwZm9udC1zdHlsZSUzQSUyMGl0YWxpYyUzQiUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCU3 RCUwQSUwQSUyMCUyMCUyMCUyMCUzQy9zdHlsZSUzRSUwQSUyMCUyMCUyMCUyMCUzQ3RpdGxlJTNF Zm9udCUzQy90aXRsZSUzRSUwQSUzQy9oZWFkJTNFJTBBJTBBJTNDZGl2JTIwY2xhc3MlM0QlMjJj b250YWluZXItZmx1aWQlMjB0ZXh0LWxlZnQlMjIlM0UlMEElMjAlMjAlMjAlMjAlM0NkaXYlMjBj bGFzcyUzRHJvdy1mbHVpZCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2RpdiUyMGNs YXNzJTNEY2VsbCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ3Al MjBzdHlsZSUzRCUyMm1hcmdpbi1sZWZ0JTNBJTIwNXB4JTNCbWFyZ2luLXRvcCUzQSUyMDAlMjIl M0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0Nz cGFuJTIwY2xhc3MlM0QlMjdoaW50JTI3JTNFJUU1JThFJTlGJUU1JThGJUE1JUU2JTkxJTk4JUU1 JUJEJTk1JTNDL3NwYW4lM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl M0MvcCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ3NwYW4lM0Ul MEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBGcm9tJTIw JTNDc3BhbiUyMGNsYXNzJTNEa3clM0VjYXNoaWVyJTNDL3NwYW4lM0UlMjB0byUyMHdvcmxkJTI3 cyUyMHlvdW5nZXN0JTIwUE0uJTIwRmlubGFuZCUyN3MlMjBuZXclMjBsZWFkZXIlMjBicmVha3Ml MjB0aGUlMjBtb2xkJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDL3Nw YW4lM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0MvZGl2JTNFJTBBJTIwJTIwJTIwJTIw JTNDL2RpdiUzRSUwQSUzQy9kaXYlM0UlMEElMEElM0NkaXYlMjBjbGFzcyUzRCUyMmNvbnRhaW5l ci1mbHVpZCUyMHRleHQtbGVmdCUyMHNsaWRldG9wJTIyJTIwaWQlM0QlMjJiYWNrJTIyJTNFJTBB JTIwJTIwJTIwJTIwJTNDZGl2JTIwY2xhc3MlM0Ryb3ctZmx1aWQlM0UlMEElMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlM0NkaXYlMjBjbGFzcyUzRGNlbGwlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlM0NwJTIwc3R5bGUlM0QlMjJtYXJnaW4tbGVmdCUzQSUyMDVweCUz Qm1hcmdpbi10b3AlM0ElMjAwJTNCJTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDc3BhbiUyMGNsYXNzJTNEJTI3aGludCUyNyUzRSVFNiU5 RiVBRiVFNiU5RSU5NyVFNiU5NiVBRiVFOCVBRiU4RCVFNSU4NSVCOCVFOSU4NyU4QSVFNCVCOSU4 OSUzQy9zcGFuJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDL3Al M0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NzcGFuJTIwY2xhc3Ml M0QlMjJodyUyMiUyMGRhdGEtaGVhZHdvcmQtaWQlM0QlMjJjYXNoaWVyJTIyJTNFY2FzaGllciUz Qy9zcGFuJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTBBJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDcCUzRSUwQSUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUz Q3NwYW4lM0UvJTNDL3NwYW4lM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NzcGFuJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwayVDMyVBNiVD QSU4MyVDOSVBQSVDOSU5OXIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0Mvc3BhbiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ3NwYW4lM0UlMEElMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlM0NhJTIwb25jbGljayUzRCUyMmRvY3VtZW50LmdldEVsZW1lbnRC eUlkJTI4JTI3cHJvbl9jYXNoaWVyJTI3JTI5LnBsYXklMjglMjklMjIlMEElMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjB0aXRsZSUzRCUyMlByb251bmNpYXRpb24lMjBmb3IlMjBjYXNoaWVyJTIyJTNF JTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTNDYXVkaW8lMjBpZCUzRCUyN3Byb25fY2FzaGllciUyNyUzRSUw QSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ3NvdXJjZSUyMHR5cGUlM0QlMjJhdWRpby9t cDMlMjIlMjBzcmMlM0QlMjJodHRwcyUzQS8vd3d3LmNvbGxpbnNkaWN0aW9uYXJ5LmNvbS9zb3Vu ZHMvaHdkX3NvdW5kcy8wODExMy5tcDMlMjIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0MvYXVkaW8l M0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NpbWclMjBzcmMlM0QlMjJodHRwcyUzQS8vc2hhcmVkLnlk c3RhdGljLmNvbS9kaWN0L3lvdWRhb3dhcC9pY29uL2RpY3RfcHJvbm91bmNlLV9pY29uX25vcm1h bC5wbmclMjIlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBhbHQlM0QlMjIlMjIlMjBo ZWlnaHQlM0QlMjIyOHB4JTIyJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDL2ElM0UlMEElMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMEEl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlM0Mvc3BhbiUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUzQ3NwYW4lM0UvJTNDL3NwYW4lM0UlMEElMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0MvcCUzRSUwQSUwQSUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUzQ2RpdiUyMGNsYXNzJTNEZ3JhbWIlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NzcGFuJTIwY2xhc3MlM0Rwb3Ml M0VDT1VOVEFCTEUlMjBOT1VOJTNDL3NwYW4lM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0N1bCUzRSUwQSUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ2xpJTNFJTBBJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDcCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQ3NwYW4lMjBjbGFzcyUzRGluZCUzRUEl MjBjYXNoaWVyJTIwaXMlMjBhJTIwcGVyc29uJTIwd2hvJTIwY3VzdG9tZXJzJTIwcGF5JTIwbW9u ZXklMjB0byUyMG9yJTIwZ2V0JTIwbW9uZXklMjBmcm9tJTIwaW4lMjBwbGFjZXMlMjBzdWNoJTIw YXMlMjBzaG9wcyUyMG9yJTIwYmFua3MuJTNDL3NwYW4lM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlM0MvcCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQy9saSUzRSUwQSUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUzQy91bCUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQy9kaXYlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlM0NkaXYlMjBjbGFzcyUzRGdyYW1iJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDc3BhbiUyMGNsYXNzJTNE cG9zJTNFVkVSQiUzQy9zcGFuJTNFJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDdWwlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMEEl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NsaSUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUzQ3AlM0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NzcGFuJTIwY2xhc3MlM0RpbmQlM0VJZiUyMGElMjBw ZXJzb24lMjBpbiUyMHRoZSUyMGFybWVkJTIwZm9yY2VzJTIwaXMlMjBjYXNoaWVyZWQlMkMlMjBo ZSUyMG9yJTIwc2hlJTIwaXMlMjBmb3JjZWQlMjB0byUyMGxlYXZlJTIwYmVjYXVzZSUyMHRoZXkl MjBoYXZlJTIwZG9uZSUyMHNvbWV0aGluZyUyMHNlcmlvdXNseSUyMHdyb25nLiUzQy9zcGFuJTNF JTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIw JTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTNDL3AlM0UlMEElMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMEElMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NwJTIwY2xhc3MlM0Ql MjJleCUyMiUzRSUzQ3NwYW4lM0UtJTIwJTNDL3NwYW4lM0UlM0NlbSUzRVRoZSUyMGdvdmVybm1l bnQlMjBoYWQlMjB0byUyMHJlY2FsbCUyMG1hbnklMjBvZmZpY2VycyUyMHdobyUyMGhhZCUyMGJl ZW4lMjBjYXNoaWVyZWQlMjBvbiUyMHBvbGl0aWNhbCUyMGdyb3VuZHMuJTNDL2VtJTNFJTNDL3Al M0UlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMEElMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMEElMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlM0NwJTIwY2xh c3MlM0QlMjJleCUyMiUzRSUzQ3NwYW4lM0UtJTIwJTNDL3NwYW4lM0UlM0NlbSUzRS4uLmElMjBj YXNoaWVyZWQlMjBhcm15JTIwY29sb25lbC4lM0MvZW0lM0UlM0MvcCUzRSUwQSUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUwQSUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUz Qy9saSUzRSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQy91bCUzRSUwQSUyMCUyMCUyMCUyMCUy MCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMCUzQy9kaXYlM0UlMEElMjAlMjAlMjAl MjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMEElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAl M0MvZGl2JTNFJTIwJTNDJTIxLS0lMjBjZWxsJTIwZW5kJTIwLS0lM0UlMEElMjAlMjAlMjAlMjAl M0MvZGl2JTNFJTBBJTNDL2RpdiUzRQ== </div>
+    
+    <script>
+    document.getElementById('f').innerHTML=decodeURIComponent(window.atob(document.getElementById('n').innerText))
+    var elem = document.getElementById('back');
+    elem.parentNode.removeChild(elem);
+    </script></div>
+    
+    
+    </body></html>
