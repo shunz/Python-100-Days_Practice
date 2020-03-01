@@ -438,6 +438,7 @@ screensize(400, 300, 'pink')
 
 reset()
 # setworldcoordinates(-50, -7.5, 50, 7.5) # 设置用户自定义坐标系(左下角的x/y坐标，右上角x/y坐标，在其中，角度可能显示扭曲
+# 改变显示的坐标系，比如setworldcoordinates(0,0,200,200)以原来右上角的第一象限区域为显示坐标系
 for _ in range(8):
     left(45); fd(20) # a regular octagon
 
