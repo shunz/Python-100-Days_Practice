@@ -1,0 +1,4 @@
+apple 苹果
+watermelon 西瓜
+banana 香蕉
+kiwi 猕猴桃，猫卵坨

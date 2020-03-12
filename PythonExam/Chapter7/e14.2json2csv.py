@@ -20,4 +20,5 @@ fr.close()
 fw = open('price_from_json.csv', 'w')
 for item in data:
     fw.write(','.join(item) + '\n')  # 通过循环将新列表中的内容逐行写入csv文件
+    
 fw.close()
