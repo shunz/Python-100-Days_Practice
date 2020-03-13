@@ -11,7 +11,7 @@
 
 dict = {}
 digits = '0123456789'
-path = 'dict.txt'
+path = '7.5dict.txt'
 
 def readFile(path, arg):
     try:
