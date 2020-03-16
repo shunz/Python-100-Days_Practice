@@ -121,7 +121,8 @@ def main():
     winsA, winsB = simNGames(n, probA, probB)
     printSummary(winsA, winsB)
 
-main()
+if __name__ == '__main__':
+    main()
     
     
 """result
