@@ -6,7 +6,9 @@ Wordcloud是一款基于Python的词云第三方库，支持对词云数量、�
 import jieba.posseg as ps
 import jieba
 import matplotlib.pyplot as plt
-from scipy.misc import imread
+# from scipy.misc import imread
+# 由于scipy的版本问题,使用imageio中的imread代替
+from imageio import imread
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 
 txt = open('threekingdoms.txt', 'r', encoding='utf-8').read()
