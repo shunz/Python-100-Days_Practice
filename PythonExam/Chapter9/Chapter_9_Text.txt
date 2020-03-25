@@ -61,7 +61,34 @@ Computing is not about computers any more. It is about living.
 9.2 模块8：numpy库的使用
 - 要点：numpy是用于处理含有同种元素的多维数组运算的第三方库
 - 9.2.1 numpy库概述
-    - 
+    - numpy已经成为科学计算事实上的标准库
+    - numpy库处理的最基础数据类型是由同种元素构成的多维数组(ndarray),简称
+      「数组」
+        - 数组中所有元素的类型必须相同
+        - 数组中的元素可以用整数索引，序号从0开始
+        - ndarray类型的维度(dimensions)叫轴(axes),轴的个数叫秩(rank)
+            一维数组的秩为1，二维数组的秩为2
+        - 二维数组相当于由两个一维数组构成
+    - 由于numpy函数较多且命名容易与常用命名混淆，建议采用如下方式引用
+        - import numpy as np
+        - as保留字能改变后续代码中的库的命名空间，有助于提高代码可读性
+- 9.2.2 numpy库解析
+    - 7个常用数组创建函数
+        - np.array([x,y,z], dtype=int)
+            - 从Python列表和元组创建数组
+        - np.arange(x,y,i)
+            - 创建一个由x到y，以i为步长的数组
+        - np.linspace(x,y,n)
+            - 创建一个由x到y，等分成n个元素的数组
+            - abbr. 线性等分向量（linear space）
+        - np.indices((m,n))
+            - 创建一个m行n列的矩阵
+        - np.random.rand(m,n)
+            - 创建一个m行n列的随机数组
+        - np.ones((m,n), dtype)
+            - 创建一个m行n列全1的数组，dtype是数据类型
+        - np.empty((m,n), dtype)
+            - 创建一个m行n列全0的数组，dtype是数据类型
 
 9.3 实例17：图像的手绘效果
 
