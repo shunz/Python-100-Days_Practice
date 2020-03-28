@@ -224,8 +224,37 @@ Computing is not about computers any more. It is about living.
           单个像素点能获得数据值种类超过256且计算资源足够，采用彩色图像也可以
           构建非可见光图谱，例如医学应用中新发展的彩色超声波成像等
 - 9.3.2 图像的手绘效果
+    - 手绘图像的基本思想是利用像素之间的梯度值(而不是像素本身)重构每个像素值。
+      为了体现光照效果，设计一个光源，建立光源对各点梯度值的影响函数，进而运算
+      出新的像素值，从而体现边界点灰度变化，形成手绘效果。
 
 9.4 模块9：matplotlib库的使用
+- 要点：matplotlib是提供数据绘图功能的第三方库，其pyplot子库主要用于实现各种
+  数据展示图形的绘制
+- 9.4.1 matplotlib.pyplot库概述
+    - 引用方式
+        - import matplotlib.pyplot as plt
+    - 为正确显示中文字体，更改默认设置
+        - matplotlib.rcParams['font.family']='SimHei'
+        - matplotlib.rcParams['font.sans-serif']=['SimHei']
+    - matplotlib库由一系列有组织有隶属关系的对象构成，这对基础绘图操作来说过
+      于复杂，因此，matplotlib提供了一套快捷命令式的绘图接口函数，即pyplot
+      子模块。
+    - pyplot将绘图所需的对象构建过程封装在函数中，对用户提供了更加友好的接口
+    - pyplot模块提供了一批预定义的绘图函数，大多数可从函数名称辨别其功能
+- 9.4.2 matplotlib.pyplot库解析
+    - 4个plt库的绘图区域函数
+        - plt.figure(figsize=None, facecolor=None)
+            - 创建一个全局绘图区域
+        - plt.axes(rect, axisbg='w')
+            - 创建一个坐标系风格的子绘图区域
+        - plt.subplot(nrows, ncols, plot_number)
+            - 在全局绘图区域中创建一个子绘图区域
+        - plt.subplot_adjust()
+            - 调整子绘图区域的布局
+            
+
+
 
 9.5 实例18：科学坐标系绘制
 
