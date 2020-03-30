@@ -264,5 +264,8 @@ Computing is not about computers any more. It is about living.
       理解和理性求证相辅相成，共同促进科学计算的深入发展
 
 9.6 实例19：多级雷达图绘制
+- 要点：使用matplotlib.pyplot绘制圆形多级雷达图，再展示对象多属性的差异
+- 雷达图是通过多个离散属性比较对象的最直观工具，游戏角色中经常出现表示人物能力值
+  的雷达图
 
 本章小结
