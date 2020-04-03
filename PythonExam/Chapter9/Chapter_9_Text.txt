@@ -269,3 +269,6 @@ Computing is not about computers any more. It is about living.
   的雷达图
 
 本章小结
+- 本章以科学计算和可视化为中心，介绍了两个强大的工具库numpy和matplotlib。pyplot，
+  通过生成手绘风格图片、绘制科学坐标系和绘制雷达图等实例展示了Python在科学计算方面
+  的强大功能。
