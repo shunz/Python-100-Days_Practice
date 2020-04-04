@@ -70,7 +70,74 @@
         - 流数据下载
         - …
     - 更多介绍：http://docs.python-requests.org
-
+-10.2.2 requests库解析
+    - 6个网页请求函数
+        - get(url[, timeout=n])
+            - 对应于HTTP的GET方式，获取网页最常用的方法，可以增加timeout=n
+              参数，设定每次请求超时时间为n秒
+            - 获取网页最常用的方式，调用后返回的网页内容会保存为一个Response
+              对象
+            - r = requests.get('http://shunz.cc')
+        - post(url, data={'key':'value'})
+            - 对应于HTTP的POST方式，其中字典用于传递客户数据
+        - delete(url)
+            - 对应于HTTP的DELETE方式
+        - head(url)
+            - 对应于HTTP的HEAD方式
+        - options(url)
+            - 对应于HTTP的OPTIONS方式
+        - put(url, data={'key':'value'})
+            - 对应于HTTP的PUT方式，其中字典用于传递客户数据
+    - 4个Response对象的属性
+        - status_code
+            - HTTP请求的返回状态，整数，200表示连接成功，404表示失败
+            - 在处理数据之前要先判断状态情况，如果请求未被响应，需要终止内容处理
+        - text
+            - HTTP响应内容的字符串形式，即url对应的页面内容
+        - encoding
+            - HTTP响应内容的编码方式
+            - 非常重要，可通过对其赋值更改编码方式，以便处理中文字符
+        - content
+            - HTTP响应内容的二进制形式
+    - 2个Response对象的方法
+        - json()
+            - 如果HTTP响应内容包含JSON格式数据，则该方法解析JSON数据
+        - raise_for_status()
+            - 如果不是200，则产生异常，用于try-except语句
+            - 可以避免设置一堆复杂的if语句，只需在收到响应时调用此方法，即可避
+              开状态字200以外的各种意外情况
+            - 常见异常
+                - 遇到网络问题，如DNS查询失败、拒绝连接等
+                    - 抛出ConnectionError异常
+                - 遇到无效HTTP响应时
+                    - 抛出HTTPError异常
+                - 请求url超时时
+                    - 抛出Timeout异常
+                - 请求超过设定的最大重定向次数
+                    - 抛出一个TooManyRedirects异常
+    - 获取一个网页内容的建议函数
+        import requests
+        def getHTMLText(url):
+            try:
+                r = requests.get(url, timeout=30)
+                r.raise_for_status()  # 如果状态不是200，引发异常
+                r.encoding = 'utf-8'  # 无论原来用什么编码，都改成utf-8
+                return r.text
+            except:
+                return ''
+        url = 'http://www.baidu.com'
+        print(getHTMLText(url))
+    - 拓展：HTTP的GET和POST
+        - HTTP协议定义了客户端与服务器交互的不同方法，最基本的就是GET和POST
+        - POST用于发送内容
+        - GET可以根据某链接获得内容，同时，也可向链接提交内容，与POST区别如下：
+            1. GET方式可以通过URL提交数据，待提交数据是URL的一部分。采用POST
+               方式的待提交数据放置在HTML HEADER内
+            2. GET方式提交的数据最多不超过1024字节，POST没有对提交内容的长度
+               限制
+            3. 安全性问题。使用GET时参数会显示在URL中，而POST不会，所以，如果
+               数据是非敏感数据，那么使用GET，否则，建议采用POST方式
+              
 
 10.3 模块11：beautifulsoup4库的使用
 
