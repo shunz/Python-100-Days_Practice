@@ -140,7 +140,22 @@
               
 
 10.3 模块11：beautifulsoup4库的使用
+- 要点：beautifulsoup4是一个解析和处理HTML和XML的第三方库
+- 10.3.1 beautifulsoup4库概述
+    - 简称：bs4
+    - 最大优点：能根据HTML和XML语法建立解析树，进而高效解析其中的内容
+    - HTML建立的Web页面一般非常复杂，除了有用的内容信息外，还包括大量用于页面格
+      式的元素，直接解析一个Web页面需要深入了解HTML语法，而且比较复杂。bs4库将专业
+      业的Web页面格式解析部分封装成函数，提供了若干有用且便捷的处理函数
+    - bs4库采用面向对象思想实现，把每个页面当做一个对象，通过<a>.<b>的方式调用
+      对象的属性(即包含的内容),或通过<a>.<b>()的方式调用方法(即处理函数)
+    - 由于库名字很特殊且采用面向对象方式组织，可以用from-import方式直接引用
+        - from bs4 import BeautifulSoup
+    - 关于bs4库的更多介绍
+        - https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/
 
+    
+    
 
 10.4 实例20：中国大学排名爬虫
 
