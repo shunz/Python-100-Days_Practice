@@ -153,7 +153,13 @@
         - from bs4 import BeautifulSoup
     - 关于bs4库的更多介绍
         - https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/
-
+- 10.3.2 bs4库解析
+    - bs4库中最主要的是BeautifulSoup类，每个实例化的对象相当于一个页面
+    - 采用from-import导入库中的BeautifulSoup类后，使用BeautifulSoup()
+      创建一个BeautifulSoup对象
+    - 创建的BeautifulSoup对象是一个树形结构，包含HTML页面中的每一个Tag元素
+        - 具体来说，HTML中的主要结构都变成了BS对象的一个属性，可以直接用
+          a.b形式获得，其中b的名字采用HTML中标签的名字
     
     
 
